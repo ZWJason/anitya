@@ -18,6 +18,7 @@ RUN dnf install -y git python3-tox libpq libpq-devel gcc graphviz
 
 # Install docker
 RUN curl -fsSL https://test.docker.com -o test-docker.sh && \
+    sed -i 's/docker-model-plugin/docker-compose-plugin/g' test-docker.sh && \
     sudo sh test-docker.sh
 
 # Install npm to manage javascript dependencies

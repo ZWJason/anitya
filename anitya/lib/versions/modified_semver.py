@@ -154,8 +154,8 @@ class ModifiedSemanticVersion(Version):
             except ValueError:
                 # version is not correct semantic version always assume true
                 # This will move the non semantic versions to bottom
-                return True
-            return False
+                return False
+            return True
 
         if result != -1:
             return False
@@ -167,7 +167,7 @@ class ModifiedSemanticVersion(Version):
         parsed_version = super().parse()  
         act_ver = []
         if parsed_version is not None:
-             act_ver = parsed_version.split("-",1)
+            act_ver = parsed_version.split("-",1)
         if len(act_ver) > 1:
             parsed_version = act_ver[0]
         return parsed_version
